@@ -1,9 +1,8 @@
-import React from "react";
-
+import PropTypes from "prop-types";
 function Book({ book }) {
 	const { title, author } = book;
 	return (
-		<li className="flex gap-4 list-none my-4">
+		<li className="flex w-full md:w-1/2 justify-between items-center gap-4 list-none my-4">
 			<p>
 				<span>{title}</span> by <span>{author}</span>
 			</p>
@@ -11,5 +10,8 @@ function Book({ book }) {
 		</li>
 	);
 }
+Book.propTypes = {
+	book: PropTypes.object,
+};
 
 export default Book;
