@@ -26,7 +26,6 @@ jobs:
   stylelint:
     name: StyleLint
     runs-on: ubuntu-latest
-    if: always()
 
     steps:
       - name: Checkout 🛎️
