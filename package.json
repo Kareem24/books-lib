@@ -8,10 +8,10 @@
     "build": "vite build",
     "watch-css": " npx tailwindcss -i ./src/index.css -o ./dist/styles.css --watch",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0 --fix",
-    "lint:check": "npx eslint",
+    "lint:check": "npx eslint .",
     "preview": "vite preview",
     "format": "npx prettier . --write",
-    "format:check": "npx prettier . --check",
+    "format:check": "npx prettier  --check",
     "stylelint": "npx stylelint **/*.css --fix",
     "stylelint:check": "npx stylelint **/*.css "
   },
