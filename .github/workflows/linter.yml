@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node 18.x
         uses: actions/setup-node@v1
         with:
-          node-version: 12.x
+          node-version: 18.x
       - name: Install required depedency for node
         run: |
           npm install
@@ -33,7 +33,7 @@ jobs:
       - name: Set up Node 12.x
         uses: actions/setup-node@v1
         with:
-          node-version: 12.x
+          node-version: 18.x
       - name: Install required dependency for node
         run: |
           npm install
@@ -54,3 +54,4 @@ jobs:
           npm install
       - name: ESLint Report
         run: npx eslint .
+
