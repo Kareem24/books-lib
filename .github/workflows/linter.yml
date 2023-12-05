@@ -53,5 +53,5 @@ jobs:
         run: |
           npm install
       - name: ESLint Report
-        run: npx eslint .
+        run: npm run lint:check
 
