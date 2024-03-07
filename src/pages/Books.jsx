@@ -1,8 +1,9 @@
 import Book from "../components/Book";
 import Form from "../components/Form";
-import { books } from "../data";
+import { useSelector } from "react-redux";
 
 export default function Books() {
+  const books = useSelector((store) => store.books);
   return (
     <main className="p-4">
       {books.map((book) => (
