@@ -24,7 +24,7 @@ function Book({ book }) {
 }
 Book.propTypes = {
   book: PropTypes.shape({
-    id: PropTypes.number,
+    id: PropTypes.string,
     author: PropTypes.string,
     title: PropTypes.string,
   }),

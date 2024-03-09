@@ -1,24 +1,22 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addBook } from "../redux/books/books";
-import store from "../redux/configureStore";
+import { v4 as uuidv4 } from "uuid";
 function Form() {
   const dispatch = useDispatch();
-  const [title, setTitle] = useState("");
-  const [author, setAutor] = useState("");
+  const [bookDetails, setBookDetails] = useState({ title: "", author: "" });
   const handleSubmit = function (e) {
     e.preventDefault();
+    const { title, author } = bookDetails;
     if (!title && !author) return;
     const book = {
-      id: new Date().getTime(),
+      id: uuidv4(),
       title,
       author,
     };
     dispatch(addBook(book));
-    setAutor("");
-    setTitle("");
     console.log(book);
-    console.log(store.getState());
+    setBookDetails({ title: "", author: "" });
   };
   return (
     <form
@@ -32,8 +30,10 @@ function Form() {
           id="title"
           placeholder="title"
           className="border-2 border-black"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          value={bookDetails.title}
+          onChange={(e) =>
+            setBookDetails({ ...bookDetails, title: e.target.value })
+          }
         />
       </label>
       <label htmlFor="author">
@@ -43,8 +43,10 @@ function Form() {
           id="author"
           placeholder="author"
           className="border-2 border-black "
-          value={author}
-          onChange={(e) => setAutor(e.target.value)}
+          value={bookDetails.author}
+          onChange={(e) =>
+            setBookDetails({ ...bookDetails, author: e.target.value })
+          }
         />
       </label>
       <button type="submit" className="border-2 border-black px-2 py-1">
