@@ -9,7 +9,17 @@ module.exports = {
     "plugin:prettier/recommended",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
-  parserOptions: { ecmaVersion: "latest", sourceType: "module" },
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
+    "prettier/prettier": [
+      "error",
+      {
+        singleQuote: true,
+        parser: "flow",
+      },
+    ],
+  },
   settings: { react: { version: "18.2" } },
   plugins: ["react-refresh"],
   rules: {
